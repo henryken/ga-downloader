@@ -72,7 +72,7 @@ class GaDownloaderApplication : CommandLineRunner {
         logger.info("Google Analytics Downloader")
         logger.info("===========================")
 
-        logger.info(properties.toString())
+        logger.info("Properties:\n" + properties.toString())
 
         googleAnalyticsDownloader.download()
     }

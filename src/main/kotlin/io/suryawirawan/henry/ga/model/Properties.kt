@@ -15,6 +15,7 @@ data class Properties(
     var startDate: String = "",
     var endDate: String = "",
     var clientCredentialsFile: String = "",
+    var outputDir: String = "",
     var maxResults: Int = 500) {
 
     @PostConstruct
@@ -41,6 +42,7 @@ data class Properties(
         startDate: $startDate
         endDate: $endDate
         clientCredentialsFile: $clientCredentialsFile
+        outputDir: $outputDir
         maxResults: $maxResults
 
         """.trimIndent()

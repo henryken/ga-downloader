@@ -46,6 +46,7 @@ dependencies {
            
     compile 'com.google.apis:google-api-services-analytics:v3-rev139-1.22.0'
     compile 'com.beust:klaxon:0.30'
+	compile 'net.sf.supercsv:super-csv-java8:2.4.0'
 
     compileOnly 'org.springframework.boot:spring-boot-configuration-processor'
 
