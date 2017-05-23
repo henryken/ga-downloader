@@ -39,7 +39,6 @@ repositories {
 
 
 dependencies {
-	compile 'org.springframework.retry:spring-retry'
 	compile 'org.springframework.boot:spring-boot-starter'
 	compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}"
 	compile "org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}"
