@@ -8,7 +8,7 @@ import javax.annotation.PostConstruct
 @ConfigurationProperties("ga")
 data class Properties(
 
-    var name: String = "",
+    var siteName: String = "",
     var viewId: String = "",
     var metrics: String = "",
     var dimensions: String = "",
@@ -34,7 +34,7 @@ data class Properties(
     override fun toString(): String {
         return """
 
-        name: $name
+        siteName: $siteName
         viewId: $viewId
         metrics: $metrics
         dimensions: $dimensions
