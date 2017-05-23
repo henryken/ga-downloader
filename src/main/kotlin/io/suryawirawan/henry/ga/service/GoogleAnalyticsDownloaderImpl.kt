@@ -20,7 +20,7 @@ class GoogleAnalyticsDownloaderImpl : GoogleAnalyticsDownloader {
                 .get(properties.viewId, properties.startDate, properties.endDate, properties.metrics)
                 .setDimensions(properties.dimensions)
                 .setStartIndex(1)
-                .setMaxResults(500)
+                .setMaxResults(properties.maxResults)
                 .execute()
 
         println(gaData.columnHeaders)
