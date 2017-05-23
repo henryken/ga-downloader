@@ -11,6 +11,7 @@ import com.google.api.services.analytics.Analytics
 import com.google.api.services.analytics.AnalyticsScopes
 import io.suryawirawan.henry.ga.model.Properties
 import io.suryawirawan.henry.ga.service.GoogleAnalyticsDownloader
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.CommandLineRunner
 import org.springframework.boot.SpringApplication
@@ -23,7 +24,9 @@ import java.util.*
 
 @SpringBootApplication
 @EnableConfigurationProperties(Properties::class)
-class GaDownloadApplication : CommandLineRunner {
+class GaDownloaderApplication : CommandLineRunner {
+
+    private val logger = LoggerFactory.getLogger(GaDownloaderApplication::class.java)
 
     @Autowired
     lateinit var properties: Properties
@@ -65,11 +68,11 @@ class GaDownloadApplication : CommandLineRunner {
     }
 
     override fun run(vararg args: String?) {
-        println("===========================")
-        println("Google Analytics Downloader")
-        println("===========================")
+        logger.info("===========================")
+        logger.info("Google Analytics Downloader")
+        logger.info("===========================")
 
-        println(properties)
+        logger.info(properties.toString())
 
         googleAnalyticsDownloader.download()
     }
@@ -77,5 +80,5 @@ class GaDownloadApplication : CommandLineRunner {
 }
 
 fun main(args: Array<String>) {
-    SpringApplication.run(GaDownloadApplication::class.java, *args)
+    SpringApplication.run(GaDownloaderApplication::class.java, *args)
 }
