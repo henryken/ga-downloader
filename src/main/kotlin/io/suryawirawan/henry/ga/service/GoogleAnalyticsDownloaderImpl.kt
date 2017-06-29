@@ -23,7 +23,8 @@ class GoogleAnalyticsDownloaderImpl : GoogleAnalyticsDownloader {
     lateinit var properties: Properties
 
     override fun download() {
-        val outputFile = properties.outputDir + File.separator + "output.csv"
+        val baseFileName = if (properties.siteName.isEmpty()) "output" else properties.siteName
+        val outputFile = "${properties.outputDir}${File.separator}${baseFileName}_${properties.startDate}_${properties.endDate}.csv"
 
         File(properties.outputDir).mkdirs()
 
